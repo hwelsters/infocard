@@ -1,0 +1,32 @@
+{
+  "name": "my-turborepo",
+  "private": true,
+  "scripts": {
+    "build": "turbo build",
+    "dev": "turbo dev",
+    "lint": "turbo lint",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "postinstall": "husky",
+    "changelog": "npx conventional-changelog -i docs/CHANGELOG.md -s -r 0  --config \"packages/conventional-changelog-config/index.mjs\" "
+  },
+  "devDependencies": {
+    "@repo/commitlint-config": "*",
+    "@repo/eslint-config": "*",
+    "@repo/typescript-config": "*",
+    "conventional-changelog-angular": "^8.0.0",
+    "conventional-changelog-cli": "^5.0.0",
+    "husky": "^9.0.11",
+    "prettier": "^3.2.5",
+    "rimraf": "^5.0.5",
+    "turbo": "latest"
+  },
+  "engines": {
+    "npm": "please-use-yarn",
+    "node": ">=18"
+  },
+  "packageManager": "yarn@1.22.21",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ]
+}
